@@ -32,10 +32,9 @@ const WeeklyReport: React.FC<WeeklyReportProps> = ({
   const [showEmailText, setShowEmailText] = useState(false);
 
   const weekDays = getWeekDays(currentWeek);
-  // Filtrer pour exclure les weekends (samedi = 6, dimanche = 0)
   const workWeekDays = weekDays.filter((date) => {
     const dayOfWeek = date.getDay();
-    return dayOfWeek !== 0 && dayOfWeek !== 6; // Exclure dimanche (0) et samedi (6)
+    return dayOfWeek !== 0 && dayOfWeek !== 6;
   });
   const weekWorkDays = workWeekDays.map((day) => {
     const workDay = workDays.find(
@@ -124,7 +123,6 @@ const WeeklyReport: React.FC<WeeklyReportProps> = ({
 
   return (
     <div className="space-y-6 p-6">
-      {/* Navigation de semaine */}
       <Card>
         <CardHeader>
           <div className="flex items-center justify-between">
@@ -150,7 +148,6 @@ const WeeklyReport: React.FC<WeeklyReportProps> = ({
         </Button>
       </div>
 
-      {/* Résumé de la semaine */}
       <Card>
         <CardHeader>
           <CardTitle>Résumé hebdomadaire</CardTitle>
@@ -225,7 +222,6 @@ const WeeklyReport: React.FC<WeeklyReportProps> = ({
         </CardContent>
       </Card>
 
-      {/* Génération d'email */}
       <Card>
         <CardHeader>
           <CardTitle>

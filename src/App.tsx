@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import TimeTracker from "./components/TimeTracker";
 import WeeklyReport from "./components/WeeklyReport";
 import type { WorkDay } from "./types/WorkDay";
